@@ -68,6 +68,7 @@
 @import "../../../media/jui/less/responsive-767px-max.joomla.less";
 // Icon Font
 @import "icomoon.less";
+@import "slogan";
 
 /* Site Body Styles */
 body {
@@ -77,7 +78,6 @@ body {
 
 body.site {
   border-top: 3px solid @linkColor;
-  padding: 20px;
   background-color: #f4f6f7;
 }
 
@@ -118,24 +118,18 @@ body.site.fluid {
 }
 
 /* Header */
-.header {
-  margin-bottom: 10px;
-}
 
 .header .finder {
   margin-top: 14px;
 }
 
 .header .finder .btn {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 /* Nav */
 .navigation {
-  padding: 5px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.075);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-  margin-bottom: 10px;
+  padding: 15px 0;
 }
 
 .navigation .nav-pills {
@@ -167,36 +161,6 @@ body.site.fluid {
 h1, h2, h3, h4, h5, h6 {
   margin: (@baseLineHeight / 1.5) 0;
   word-wrap: break-word;
-}
-
-h1 {
-  font-size: 26px;
-  line-height: 28px;
-}
-
-h2 {
-  font-size: 22px;
-  line-height: 24px;
-}
-
-h3 {
-  font-size: 18px;
-  line-height: 20px;
-}
-
-h4 {
-  font-size: 14px;
-  line-height: 16px;
-}
-
-h5 {
-  font-size: 13px;
-  line-height: 15px;
-}
-
-h6 {
-  font-size: 12px;
-  line-height: 14px;
 }
 
 /* Module */
@@ -457,21 +421,22 @@ figcaption {
 .categories-list .collapse {
   margin-left: 20px;
 }
+
 .header {
-  width:100%;
+  width: 100%;
   background-image: url(/images/headers/main-bg.png);
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
-  position:relative;
-  padding-top:80px;
-  height:360px
+  position: relative;
+  padding-top: 80px;
+  height: 360px
 }
+
 .brand {
   color: #001a27;
 
-  width: 35%;
-  min-width:450px;
+  width: 350px;
   display: inline-block;
   position: relative;
   z-index: 10;
@@ -481,46 +446,52 @@ figcaption {
   -o-transition: all .2s linear;
   transition: all .2s linear;
 }
+
 .brand:hover {
   color: #005e8d;
   width: 38%;
   text-decoration: none;
 }
+
 .brand img {
-  width:100%;
+  width: 100%;
 }
+
 @media (min-width: 768px) {
 
   .header-inner {
-    position:relative;
-    text-align:center;
-    height:100%;
+    position: relative;
+    text-align: center;
+    height: 100%;
   }
-  .header-inner:before{
+
+  .header-inner:before {
     background-image: url(/images/headers/bg-right.png);
     background-size: 300px;
-    right:0;
-    top:0;
-    content:"";
-    position:absolute;
-    z-index:1;
-    width:300px;
-    height:100%;
+    right: 0;
+    top: 0;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
     display: inherit;
   }
-  .header-inner:after{
+
+  .header-inner:after {
     background-image: url(/images/headers/bg-left.png);
     background-size: 300px;
-    left:0;
-    top:0;
-    content:"";
-    position:absolute;
-    z-index:1;
-    width:300px;
-    height:100%;
+    left: 0;
+    top: 0;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
     display: inherit;
   }
 }
+
 @media (max-width: 480px) {
   .item-info > span {
     display: block;
@@ -879,7 +850,6 @@ ul.manager .height-50 .icon-folder-2 {
   width: 100%;
   float: left;
   padding: 15px 0;
-  border-bottom: 1px solid #dbdbdb;
 }
 
 .tg-addressbar {
@@ -962,4 +932,48 @@ ul.manager .height-50 .icon-folder-2 {
 .tg-topbar .tg-socialicons li.tg-vk a:hover {
   background: #3b5999;
   border-color: #3b5999;
+}
+
+[class*="section_"], #content {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contact__container__info {
+
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: rgb(238, 238, 238);
+  border-image: initial;
+  list-style: none;
+  padding: 50px;
+
+  > li {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  > li > i {
+    font-size: 30px;
+    margin-right: 25px;
+    color: rgb(255, 171, 0);
+    width:40px;
+  }
+  > li > p {
+    margin: 0;
+  }
+}
+body .creativecontactform_input_element {
+  height:45px;
+}
+body .creative_input_dummy_wrapper {
+  position: relative;
+  padding: 14px 20px;
+}
+body .ccf_select_icon {
+  right: 12px;
+  top: 17px;
 }
