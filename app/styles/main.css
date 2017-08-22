@@ -2940,10 +2940,12 @@ input[type="submit"].btn.btn-mini {
 }
 .nav > li > a {
   display: block;
+  font-weight: 400;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
+  color: #333333;
   background-color: #eeeeee;
 }
 .nav > li > a > img {
@@ -3021,9 +3023,9 @@ input[type="submit"].btn.btn-mini {
 }
 .nav-tabs > li > a,
 .nav-pills > li > a {
-  padding-right: 12px;
-  padding-left: 12px;
-  margin-right: 2px;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin-right: 4px;
   line-height: 14px;
 }
 .nav-tabs {
@@ -3055,13 +3057,15 @@ input[type="submit"].btn.btn-mini {
   cursor: default;
 }
 .nav-pills > li > a {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: 'Oswald', sans-serif;
+  color: white;
 }
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover,
@@ -3664,14 +3668,14 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #999999;
+  color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .brand:focus,
 .navbar-inverse .nav > li > a:focus {
-  color: #ffffff;
+  color: black;
 }
 .navbar-inverse .brand {
   color: #999999;
@@ -3682,7 +3686,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse .nav > li > a:focus,
 .navbar-inverse .nav > li > a:hover {
   background-color: transparent;
-  color: #ffffff;
+  color: #333333;
 }
 .navbar-inverse .nav .active > a,
 .navbar-inverse .nav .active > a:hover,
@@ -7232,6 +7236,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ul {
+  list-style: none;
+}
 body.site {
   border-top: 3px solid #ffab00;
   background-color: #f4f6f7;
@@ -7277,7 +7284,8 @@ body.site.fluid {
 }
 /* Nav */
 .navigation {
-  padding: 15px 0;
+  padding: 13px 0;
+  background: #333333;
 }
 .navigation .nav-pills {
   margin-bottom: 0;
@@ -7544,7 +7552,6 @@ figcaption {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 80px;
   height: 360px;
 }
 .brand {
@@ -7553,7 +7560,7 @@ figcaption {
   display: inline-block;
   position: relative;
   z-index: 10;
-  padding: 10px 0 0 20px;
+  padding: 30px 0 0 20px;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -7561,7 +7568,7 @@ figcaption {
 }
 .brand:hover {
   color: #005e8d;
-  width: 38%;
+  width: 380px;
   text-decoration: none;
 }
 .brand img {
@@ -7889,7 +7896,6 @@ ul.manager .height-50 .icon-folder-2 {
 .tg-topbar {
   width: 100%;
   float: left;
-  padding: 15px 0;
 }
 .tg-addressbar {
   float: left;
@@ -7898,7 +7904,6 @@ ul.manager .height-50 .icon-folder-2 {
   float: left;
 }
 .tg-addressdropdown .tg-btndropdown {
-  border: 0;
   padding: 11px 19px;
   border: 1px solid #dbdbdb;
 }
@@ -7923,6 +7928,9 @@ ul.manager .height-50 .icon-folder-2 {
   line-height: inherit;
   list-style-type: none;
 }
+.tg-addressinfo li:first-child {
+  padding: 0;
+}
 .tg-addressinfo li i,
 .tg-addressinfo li address,
 .tg-addressinfo li time,
@@ -7946,7 +7954,6 @@ ul.manager .height-50 .icon-folder-2 {
 .tg-topbar .tg-socialicons li a {
   color: #767676;
   background: none;
-  border: 1px solid #dbdbdb;
 }
 .tg-topbar .tg-socialicons li a i {
   color: #767676;
@@ -7966,28 +7973,54 @@ ul.manager .height-50 .icon-folder-2 {
   padding-bottom: 100px;
 }
 .contact__container__info {
-  background-color: #f5f5f5;
   margin: 0;
-  border-width: 1px 1px 1px 0;
-  border-style: solid;
-  border-color: #eeeeee;
-  border-image: initial;
   list-style: none;
-  padding: 50px;
 }
 .contact__container__info > li {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
 }
 .contact__container__info > li > i {
-  font-size: 30px;
+  font-size: 22px;
   margin-right: 25px;
   color: #ffab00;
-  width: 40px;
+  width: 22px;
 }
 .contact__container__info > li > p {
   margin: 0;
+}
+.contact__container__info > li > .fa-envelope {
+  font-size: 17px;
+}
+.contact__container__info > li .fa-vk {
+  font-size: 30px;
+  color: #555555;
+}
+.contact__container__info.header-contacts {
+  float: right;
+  z-index: 2;
+  font-size: 12px;
+  line-height: 14px;
+}
+.contact__container__info.header-contacts > li {
+  margin-bottom: 0;
+  line-height: 18px;
+  color: white;
+}
+.contact__container__info.header-contacts > li > i {
+  font-size: 17px;
+  margin-right: 20px;
+  color: #ffab00;
+  width: 15px;
+}
+.contact__container__info.header-contacts > li > .fa-envelope {
+  font-size: 13px;
+}
+.contact__container__info.header-contacts .fa-vk {
+  font-size: 15px;
 }
 body .creativecontactform_input_element {
   height: 45px;
@@ -7999,6 +8032,65 @@ body .creative_input_dummy_wrapper {
 body .ccf_select_icon {
   right: 12px;
   top: 17px;
+}
+body .ccf_close_icon {
+  right: 26px;
+  top: 17px;
+}
+body .creative_form_1 .creativecontactform_header {
+  padding: 16.66666667px 15px;
+}
+body .creative_form_1.creativecontactform_wrapper {
+  margin: 0;
+}
+body .creative_form_1 .creativecontactform_input_element:hover,
+body .creative_form_1 .creativecontactform_input_element:focus,
+body .creative_form_1 .creativecontactform_input_element.focused {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.row-flex {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row-flex [class*="span-flex"] {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  padding-left: 0;
+  padding-right: 0;
+}
+.row-flex .span-flex8 {
+  width: 66.6667%;
+}
+.row-flex .span-flex4 {
+  width: 33.3333%;
+}
+.contact-section .span-flex8 {
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eeeeee;
+  border-image: initial;
+  padding: 50px;
+}
+.contact-section .span-flex4 {
+  background-color: #f5f5f5;
+  margin: 0;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: #eeeeee;
+  border-image: initial;
+  list-style: none;
+  padding: 50px;
+}
+.float-right {
+  float: right;
 }
 .browsehappy {
   margin: 0.2em 0;

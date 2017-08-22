@@ -76,6 +76,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+  list-style: none;
+}
 body.site {
   border-top: 3px solid @linkColor;
   background-color: #f4f6f7;
@@ -129,7 +132,8 @@ body.site.fluid {
 
 /* Nav */
 .navigation {
-  padding: 15px 0;
+  padding: 13px 0;
+  background: @grayDark;
 }
 
 .navigation .nav-pills {
@@ -429,7 +433,6 @@ figcaption {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 80px;
   height: 360px
 }
 
@@ -440,7 +443,7 @@ figcaption {
   display: inline-block;
   position: relative;
   z-index: 10;
-  padding: 10px 0 0 20px;
+  padding: 30px 0 0 20px;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -449,7 +452,7 @@ figcaption {
 
 .brand:hover {
   color: #005e8d;
-  width: 38%;
+  width: 380px;
   text-decoration: none;
 }
 
@@ -849,7 +852,6 @@ ul.manager .height-50 .icon-folder-2 {
 .tg-topbar {
   width: 100%;
   float: left;
-  padding: 15px 0;
 }
 
 .tg-addressbar {
@@ -861,7 +863,6 @@ ul.manager .height-50 .icon-folder-2 {
 }
 
 .tg-addressdropdown .tg-btndropdown {
-  border: 0;
   padding: 11px 19px;
   border: 1px solid #dbdbdb;
 }
@@ -890,7 +891,9 @@ ul.manager .height-50 .icon-folder-2 {
   line-height: inherit;
   list-style-type: none;
 }
-
+.tg-addressinfo li:first-child {
+  padding: 0;
+}
 .tg-addressinfo li i,
 .tg-addressinfo li address,
 .tg-addressinfo li time,
@@ -917,7 +920,6 @@ ul.manager .height-50 .icon-folder-2 {
 .tg-topbar .tg-socialicons li a {
   color: #767676;
   background: none;
-  border: 1px solid #dbdbdb;
 }
 
 .tg-topbar .tg-socialicons li a i {
@@ -941,39 +943,133 @@ ul.manager .height-50 .icon-folder-2 {
 }
 
 .contact__container__info {
-
-  background-color: rgb(245, 245, 245);
   margin: 0;
-  border-width: 1px 1px 1px 0;
-  border-style: solid;
-  border-color: rgb(238, 238, 238);
-  border-image: initial;
   list-style: none;
-  padding: 50px;
 
   > li {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    text-align: center;
+    margin-bottom:15px;
   }
   > li > i {
-    font-size: 30px;
+    font-size: 22px;
     margin-right: 25px;
     color: rgb(255, 171, 0);
-    width:40px;
+    width:22px;
   }
   > li > p {
     margin: 0;
   }
+  > li >.fa-envelope {
+    font-size: 17px;
+  }
+  > li .fa-vk {
+    font-size: 30px;
+    color: @gray;
+  }
 }
-body .creativecontactform_input_element {
-  height:45px;
+.contact__container__info.header-contacts {
+
+  float: right;
+  z-index: 2;
+  font-size: 12px;
+
+  line-height: 14px;
+  > li {
+    margin-bottom:0;
+    line-height: 18px;
+    color:white;
+  }
+  > li > i {
+    font-size: 17px;
+    margin-right: 20px;
+    color: rgb(255, 171, 0);
+    width:15px;
+  }
+
+  > li >.fa-envelope {
+    font-size: 13px;
+  }
+  .fa-vk {
+    font-size: 15px;
+  }
 }
-body .creative_input_dummy_wrapper {
-  position: relative;
-  padding: 14px 20px;
+body  {
+  .creativecontactform_input_element {
+    height:45px;
+  }
+  .creative_input_dummy_wrapper {
+    position: relative;
+    padding: 14px 20px;
+  }
+  .ccf_select_icon {
+    right: 12px;
+    top: 17px;
+  }
+
+  .ccf_close_icon {
+    right: 26px;
+    top: 17px;
+  }
+  .creative_form_1 .creativecontactform_header {
+    padding: (@baseLineHeight / 1.5) 15px;
+  }
+  .creative_form_1.creativecontactform_wrapper {
+    margin: 0;
+  }
+  .creative_form_1 .creativecontactform_input_element:hover,
+  .creative_form_1 .creativecontactform_input_element:focus,
+  .creative_form_1 .creativecontactform_input_element.focused {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
 }
-body .ccf_select_icon {
-  right: 12px;
-  top: 17px;
+
+.row-flex {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row-flex [class*="span-flex"] {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  padding-left: 0;
+  padding-right: 0;
+}
+.row-flex .span-flex8 {
+  width: 66.6667%;
+}
+.row-flex .span-flex4 {
+  width: 33.3333%;
+}
+.contact-section {
+  .span-flex8 {
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+    border-image: initial;
+    padding: 50px;
+  }
+  .span-flex4 {
+    background-color: rgb(245, 245, 245);
+    margin: 0;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+    border-image: initial;
+    list-style: none;
+    padding: 50px;
+  }
+}
+.float-right {
+
+  float:right;
 }
