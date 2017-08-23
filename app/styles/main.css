@@ -5663,7 +5663,7 @@ a.badge:focus {
     margin-left: 0;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 968px) {
   body {
     padding-top: 0;
   }
@@ -5814,7 +5814,7 @@ a.badge:focus {
     padding-right: 10px;
   }
 }
-@media (min-width: 1400px + 1) {
+@media (min-width: 968px + 1) {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
@@ -7242,6 +7242,7 @@ ul {
 body.site {
   border-top: 3px solid #ffab00;
   background-color: #f4f6f7;
+  overflow-x: hidden;
 }
 body.site.fluid {
   background-color: #ffffff;
@@ -8091,6 +8092,15 @@ body .creative_form_1 .creativecontactform_input_element.focused {
 }
 .float-right {
   float: right;
+}
+.teachers.uk-grid {
+  padding: 50px 0;
+}
+.teachers.uk-grid * {
+  text-align: center;
+}
+.teachers.uk-grid a {
+  display: block;
 }
 .browsehappy {
   margin: 0.2em 0;
