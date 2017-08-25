@@ -1,7 +1,29 @@
 .section_features .features__item__icon {
-  margin-bottom: 15px;
-  font-size: 2.5em;
+
+  font-size: 2.8em;
   color: @linkColor;
+  position: relative;
+  width: 65px;
+  margin: 0 auto 15px;
+  a {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 1;
+    bottom: -15px;
+    left: -15px;
+    font-size: 0;
+    background: url(/images/main-data/sale.png);
+    background-clip: border-box;
+    background-size: contain;
+    transition: all 0.1s;
+    fill-opacity: 1;
+    &:hover {
+      width: 60px;
+      height: 60px;
+      fill-opacity: 0.8;
+    }
+  }
 }
 .section_features .features__item {
   margin-bottom: 25px;

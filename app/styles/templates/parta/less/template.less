@@ -1,14 +1,18 @@
 // CSS Reset
 @import "../../../media/jui/less/reset.less";
 // Core variables and mixins
+@import "../../../../bower_components/bootstrap/less/variables.less";
 @import "variables.less";
 // Custom for this template
 @import "template_rtl.less";
 // Specific for rtl
+@import "../../../../bower_components/bootstrap/less/mixins.less";
+@import "../../../../bower_components/bootstrap/less/grid.less";
 @import "../../../media/jui/less/mixins.less";
 // Grid system and page structure
 @import "../../../media/jui/less/scaffolding.less";
-@import "../../../media/jui/less/grid.less";
+//@import "../../../media/jui/less/grid.less";
+
 @import "../../../media/jui/less/layouts.less";
 // Base CSS
 @import "../../../media/jui/less/type.less";
@@ -70,6 +74,7 @@
 @import "icomoon.less";
 @import "slogan";
 
+* {box-sizing: border-box;}
 /* Site Body Styles */
 body {
   -webkit-font-smoothing: antialiased;
@@ -82,13 +87,15 @@ ul {
 body.site {
   border-top: 3px solid @linkColor;
   background-color: #f4f6f7;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 body.site.fluid {
   background-color: #ffffff;
 }
-
+.relative {
+  position: relative;
+}
 .thumbnail {
   margin-bottom: 9px;
 }
@@ -228,16 +235,6 @@ p {
 .items-more,
 .content-links {
   padding: 15px 0;
-}
-
-/* Breadcrumbs */
-.breadcrumb {
-  margin: 10px 0;
-}
-
-.breadcrumb > li,
-.breadcrumb > .active {
-  color: #515151;
 }
 
 /* mod_login */
@@ -434,7 +431,7 @@ figcaption {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  height: 360px
+  height: 285px
 }
 
 .brand {
@@ -519,12 +516,11 @@ figcaption {
   }
 
   .header {
-    background: transparent;
+    text-align: center;
   }
 
   .header .brand {
     float: none;
-    display: block;
     text-align: center;
   }
 
@@ -939,8 +935,9 @@ ul.manager .height-50 .icon-folder-2 {
 
 [class*="section_"], #content {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 70px;
+
+  padding-top: 50px;
 }
 
 .contact__container__info {
@@ -1034,8 +1031,7 @@ body  {
   align-items: stretch;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin: 30px -15px 70px;
 }
 .row-flex [class*="span-flex"] {
   display: flex;
@@ -1044,12 +1040,7 @@ body  {
   padding-left: 0;
   padding-right: 0;
 }
-.row-flex .span-flex8 {
-  width: 66.6667%;
-}
-.row-flex .span-flex4 {
-  width: 33.3333%;
-}
+
 .contact-section {
   .span-flex8 {
     background-color: white;
@@ -1059,6 +1050,7 @@ body  {
     border-image: initial;
     padding: 50px;
   }
+
   .span-flex4 {
     background-color: rgb(245, 245, 245);
     margin: 0;
@@ -1068,6 +1060,11 @@ body  {
     border-image: initial;
     list-style: none;
     padding: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .row-flex {
+    display: block;
   }
 }
 .float-right {
@@ -1082,4 +1079,67 @@ body  {
   a{
     display: block;
   }
+}
+
+.footer {
+  background: @grayDark;
+  color:@grayLight;
+  position:relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+
+  .menu {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    color: @linkColorHover;
+    background-color: transparent;
+  }
+}
+.site-description {
+  color: #ffab00;
+  font-size: 27px;
+  line-height: 57px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.bg-imgs {
+  &:before,
+  &:after{
+    background-size: 300px;
+    top: 0;
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: inherit;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  &:before {
+    background-image: url(/images/headers/bg-right.png);
+    right: 0;
+  }
+  &:after {
+    background-image: url(/images/headers/bg-left.png);
+    left: 0;
+  }
+}
+
+#mod-tlp-testimonial-main {
+
+  margin-bottom: 40px;
 }
