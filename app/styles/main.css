@@ -1150,6 +1150,20 @@ h3 small {
 h4 small {
   font-size: 15px;
 }
+@media (max-width: 991px) {
+  h1 {
+    font-size: 32.25px;
+  }
+  h2 {
+    font-size: 22.5px;
+  }
+  h3 {
+    font-size: 17.25px;
+  }
+  h4 {
+    font-size: 15px;
+  }
+}
 .page-header {
   margin: 0 0 37.5px;
 }
@@ -3585,7 +3599,8 @@ input[type="submit"].btn.btn-mini {
   float: left;
 }
 .nav-tabs > li > a,
-.nav-pills > li > a {
+.nav-pills > li > a,
+.nav-pills .separator {
   padding-right: 18px;
   padding-left: 18px;
   margin-right: 4px;
@@ -3619,7 +3634,8 @@ input[type="submit"].btn.btn-mini {
   border-bottom-color: transparent;
   cursor: default;
 }
-.nav-pills > li > a {
+.nav-pills > li > a,
+.nav-pills .separator {
   padding-top: 12px;
   padding-bottom: 12px;
   margin-top: 8px;
@@ -4262,14 +4278,17 @@ input[type="submit"].btn.btn-mini {
   border-color: #252525;
 }
 .navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
+.navbar-inverse .nav > li > a,
+.navbar-inverse .nav .separator {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav .separator:hover,
 .navbar-inverse .brand:focus,
-.navbar-inverse .nav > li > a:focus {
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav .separator:focus {
   color: black;
 }
 .navbar-inverse .brand {
@@ -8163,6 +8182,16 @@ figcaption {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
+@media (max-width: 968px) {
+  .navigation .nav-child {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    float: none;
+  }
+}
 .navigation .nav-child.pull-right {
   right: 0;
   left: auto;
@@ -8340,10 +8369,12 @@ figcaption {
   }
   .header {
     text-align: center;
+    height: 210px;
   }
   .header .brand {
     float: none;
     text-align: center;
+    width: 80%;
   }
   .header .nav.pull-right,
   .header-search {
@@ -8356,7 +8387,8 @@ figcaption {
   .header-search .search-query {
     width: 90%;
   }
-  .header .nav-pills > li > a {
+  .header .nav-pills > li > a,
+  .nav-pills .separator {
     border: 1px solid #dddddd;
     border-bottom: 0;
     margin: 0;
@@ -8421,10 +8453,12 @@ figcaption {
   .nav-pills > li {
     float: none;
   }
-  .nav-pills > li > a {
+  .nav-pills > li > a,
+  .nav-pills .separator {
     margin-right: 0;
   }
-  .nav-pills > li > a {
+  .nav-pills > li > a,
+  .nav-pills .separator {
     margin-bottom: 3px;
   }
   .nav-pills > li:last-child > a {
@@ -8828,6 +8862,13 @@ body .creative_form_1 .creativecontactform_input_element.focused {
   -webkit-column-gap: 50px;
   column-gap: 50px;
 }
+@media (max-width: 767px) {
+  .footer .menu {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
 .footer .container {
   position: relative;
   z-index: 1;
@@ -8865,6 +8906,14 @@ body .creative_form_1 .creativecontactform_input_element.focused {
 .bg-imgs:after {
   background-image: url(/images/headers/bg-left.png);
   left: 0;
+}
+#mod-tlp-testimonial-main {
+  margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .site-description {
+    font-size: 18px;
+  }
 }
 .browsehappy {
   margin: 0.2em 0;

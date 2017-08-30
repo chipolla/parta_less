@@ -325,7 +325,14 @@ figcaption {
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
     background-clip: padding-box;
-
+    @media (max-width: 968px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: @zindexDropdown;
+      display: block; // none by default, but block on "open" of the menu
+      float: none;
+    }
     // Aligns the dropdown menu to right
     &.pull-right {
       right: 0;
@@ -517,11 +524,13 @@ figcaption {
 
   .header {
     text-align: center;
+    height: 210px;
   }
 
   .header .brand {
     float: none;
     text-align: center;
+    width:80%;
   }
 
   .header .nav.pull-right,
@@ -538,7 +547,8 @@ figcaption {
     width: 90%;
   }
 
-  .header .nav-pills > li > a {
+  .header .nav-pills > li > a,
+  .nav-pills .separator {
     border: 1px solid @tableBorder;
     border-bottom: 0;
     margin: 0;
@@ -615,11 +625,13 @@ figcaption {
     float: none;
   }
 
-  .nav-pills > li > a {
+  .nav-pills > li > a,
+  .nav-pills .separator {
     margin-right: 0;
   }
 
-  .nav-pills > li > a {
+  .nav-pills > li > a ,
+  .nav-pills .separator {
     margin-bottom: 3px;
   }
 
@@ -1096,7 +1108,16 @@ body  {
     -moz-column-gap: 50px;
     -webkit-column-gap: 50px;
     column-gap: 50px;
+
   }
+  @media (max-width: 767px) {
+      .menu {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+      }
+  }
+
   .container {
     position: relative;
     z-index: 1;
@@ -1142,4 +1163,9 @@ body  {
 #mod-tlp-testimonial-main {
 
   margin-bottom: 40px;
+}
+@media (max-width: @screen-sm-max) {
+  .site-description {
+    font-size: 18px;
+  }
 }
