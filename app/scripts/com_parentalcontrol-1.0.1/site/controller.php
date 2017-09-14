@@ -1,12 +1,12 @@
 <?php
 
-/**
- * @version     1.0.0
- * @package     com_tlptestimonial
- * @copyright   Copyright (C) 2014. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Techlabpro <techlabpro@gmail.com> - http://www.techlabpro.com
- */
+  /**
+  * @version     1.0.0
+  * @package     com_parentalcontrol
+  * @copyright   Copyright (C) 2014. All rights reserved.
+  * @license     GNU General Public License version 2 or later; see LICENSE.txt
+  * @author      chipolla <labushkina@gmail.com>
+  */
 // No direct access
 defined('_JEXEC') or die;
 
@@ -24,9 +24,9 @@ class TlptestimonialController extends JControllerLegacy {
      * @since	1.5
      */
     public function display($cachable = false, $urlparams = false) {
-        require_once JPATH_COMPONENT . '/helpers/tlptestimonial.php';
+        require_once JPATH_COMPONENT . '/helpers/parentalcontrol.php';
 
-        $view = JFactory::getApplication()->input->getCmd('view', 'testimonials');
+        $view = JFactory::getApplication()->input->getCmd('view', 'subjects');
         JFactory::getApplication()->input->set('view', $view);
 
         parent::display($cachable, $urlparams);

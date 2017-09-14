@@ -2,10 +2,10 @@
 
 /**
  * @version     1.0.0
- * @package     com_tlptestimonial
+ * @package     com_parentalcontrol
  * @copyright   Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Techlabpro <techlabpro@gmail.com> - http://www.techlabpro.com
+ * @author      chipolla <labushkina@gmail.com>
  */
 // No direct access
 defined('_JEXEC') or die;
@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
  * @param	array	A named array
  * @return	array
  */
-function TlptestimonialBuildRoute(&$query) {
+function ParentalcontrolBuildRoute(&$query) {
     $segments = array();
 
     if (isset($query['task'])) {
@@ -39,11 +39,11 @@ function TlptestimonialBuildRoute(&$query) {
  *
  * Formats:
  *
- * index.php?/tlptestimonial/task/id/Itemid
+ * index.php?/parentalcontrol/task/id/Itemid
  *
- * index.php?/tlptestimonial/id/Itemid
+ * index.php?/parentalcontrol/id/Itemid
  */
-function TlptestimonialParseRoute($segments) {
+function ParentalcontrolParseRoute($segments) {
     $vars = array();
 
     // view is always the first element of the array

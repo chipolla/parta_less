@@ -1,21 +1,20 @@
 <?php
-
-/**
- * @version     1.0.0
- * @package     com_tlptestimonial
- * @copyright   Copyright (C) 2014. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Techlabpro <techlabpro@gmail.com> - http://www.techlabpro.com
- */
+  /**
+  * @version     1.0.0
+  * @package     com_parentalcontrol
+  * @copyright   Copyright (C) 2014. All rights reserved.
+  * @license     GNU General Public License version 2 or later; see LICENSE.txt
+  * @author      chipolla <labushkina@gmail.com>
+  */
 // No direct access
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
 /**
- * View class for a list of Tlptestimonial.
+ * View class for a geed of lessons.
  */
-class TlptestimonialViewTestimonials extends JViewLegacy {
+class ParentalcontrolViewParentalcontrolGreed extends JViewLegacy {
 
     protected $items;
     protected $pagination;
@@ -31,8 +30,8 @@ class TlptestimonialViewTestimonials extends JViewLegacy {
         $this->state = $this->get('State');
         $this->items = $this->get('Items');
         $this->pagination = $this->get('Pagination');
-        $this->params = $app->getParams('com_tlptestimonial');
-        
+        $this->params = $app->getParams('com_parentalcontrol');
+
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {

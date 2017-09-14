@@ -5,16 +5,16 @@
                         <![CDATA[COM_TLPTESTIMONIAL_TITLE_LIST_VIEW_TESTIMONIALS_DESC]]>
         </message>
 	</layout>
-	
+
 	 <fields name="params">
-        <fieldset 
+        <fieldset
             name="basic"
             label="COM_TLPTESTIMONIAL_FIELDSET_CATEGORY_SELECT_LABEL_TITLE">
             <field
-                name="category_id" addfieldpath="administrator/components/com_tlptestimonial/models/fields"
-			 	type="TestimonialCategory"
+                name="category_id" addfieldpath="administrator/components/com_parentalcontrol/models/fields"
+			 	type="ParentalcontrolGroup"
                 label="COM_TLPTESTIMONIAL_FIELDSET_CATEGORY_SELECT_LABEL"
-                
+
                 description="JGLOBAL_SHOW_TITLE_DESC">
             </field>
         </fieldset>
