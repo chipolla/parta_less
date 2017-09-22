@@ -67,8 +67,6 @@
 
 			<language tag="ru-RU">ru-RU/ru-RU.com_controll.ini</language>
 			<language tag="ru-RU">ru-RU/ru-RU.com_controll.sys.ini</language>
-			<language tag="el-GR">el-GR/el-GR.com_controll.ini</language>
-			<language tag="el-GR">el-GR/el-GR.com_controll.sys.ini</language>
         </languages>
     </administration>
     <plugins>

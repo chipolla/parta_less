@@ -53,12 +53,22 @@ CREATE TABLE IF NOT EXISTS `#__controll_settings` (
 CREATE TABLE IF NOT EXISTS `#__controll_subjects`(
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `subject` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL,
+  `state` tinyint(4) NOT NULL,
+  `checked_out` int(11) NOT NULL,
+  `checked_out_time` datetime NOT NULL,
+  `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `#__controll_teachers`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL,
+    `state` tinyint(4) NOT NULL,
+    `checked_out` int(11) NOT NULL,
+    `checked_out_time` datetime NOT NULL,
+    `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
  );
 
