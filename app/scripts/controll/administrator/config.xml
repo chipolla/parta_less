@@ -4,15 +4,15 @@
 
     </fieldset>
     <fieldset
-        name="permissions"
-	description="JCONFIG_PERMISSIONS_DESC"
-	label="JCONFIG_PERMISSIONS_LABEL">
+      name="permissions"
+      description="JCONFIG_PERMISSIONS_DESC"
+      label="JCONFIG_PERMISSIONS_LABEL">
 
 		<field
-                    name="rules" type="rules" component="com_controll"
-                    class="inputbox" filter="rules" validate="rules"
-                    label="JCONFIG_PERMISSIONS_LABEL"
-                    section="component" />
+      name="rules" type="rules" component="com_controll"
+      class="inputbox" filter="rules" validate="rules"
+      label="JCONFIG_PERMISSIONS_LABEL"
+      section="component" />
 	</fieldset>
 </config>
 <!--
@@ -26,6 +26,9 @@ http://docs.joomla.org/Calendar_parameter_type
 
 http://docs.joomla.org/Category_parameter_type
 <field name="mycategory" type="category" label="Select a category" description="" section="3" />
+
+http://docs.joomla.org/Subject_parameter_type
+<field name="mysubject" type="subject" label="Select a subject" description="" section="3" />
 
 http://docs.joomla.org/Editors_parameter_type
 <field name="myeditor" type="editors" default="none" label="Select an editor" />

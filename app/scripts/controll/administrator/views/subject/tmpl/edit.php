@@ -59,8 +59,8 @@ $document->addStyleSheet('components/com_controll/assets/css/controll.css');
 
                 <input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
 			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('subject_name'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('subject_name'); ?></div>
+				<div class="control-label"><?php echo $this->form->getLabel('subject'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('subject'); ?></div>
 			</div>
 
 

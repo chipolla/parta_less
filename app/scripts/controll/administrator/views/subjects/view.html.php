@@ -47,12 +47,12 @@ class ControllViewSubjects extends JViewLegacy {
      * @since	1.6
      */
     protected function addToolbar() {
-        require_once JPATH_COMPONENT . '/helpers/subject.php';
+        require_once JPATH_COMPONENT . '/helpers/controll.php';
 
         $state = $this->get('State');
-        $canDo = ControllHelper::getActions($state->get('filter.subject_id'));
+        $canDo = ControllHelper::getActions($state->get('filter.category_id'));
 
-        JToolBarHelper::title(JText::_('COM_CONTROLL_TITLE_SUBJECTS'), 'categories.png');
+        JToolBarHelper::title(JText::_('COM_CONTROLL_TITLE_SUBJECTS'), '');
 
         //Check if the form exists before showing the add/edit buttons
         $formPath = JPATH_COMPONENT_ADMINISTRATOR . '/views/controll';
@@ -123,7 +123,7 @@ class ControllViewSubjects extends JViewLegacy {
 	{
 		return array(
 		'a.id' => JText::_('JGRID_HEADING_ID'),
-		'a.subject_name' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
+		'a.subject' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
 		'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
 		'a.state' => JText::_('JSTATUS'),
 		);

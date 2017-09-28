@@ -92,7 +92,9 @@ class ControllTablesubject extends JTable
 				}
 		$input = JFactory::getApplication()->input;
 		$task = $input->getString('task', '');
-		if(($task == 'save' || $task == 'apply') && (!JFactory::getUser()->authorise('core.edit.state','com_controll') && $array['state'] == 1)){
+		if(($task == 'save' || $task == 'apply') &&
+		 (!JFactory::getUser()->authorise('core.edit.state','com_controll') &&
+		  $array['state'] == 1)){
 			$array['state'] = 0;
 		}
 		if($array['id'] == 0){

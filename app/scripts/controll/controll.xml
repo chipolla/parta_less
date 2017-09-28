@@ -42,11 +42,17 @@
         <menu img="components/com_controll/assets/images/s_com_controll.png" >COM_CONTROLL</menu>
         <submenu>
 
-			<menu link="option=com_controll&amp;view=controlls" view="controlls" img="components/com_controll/assets/images/s_controlls.png" alt="Controll/Controlls">COM_CONTROLL_TITLE_CONTROLLS</menu>
-
-			<menu link="option=com_controll&amp;view=categories" view="categories" img="components/com_controll/assets/images/s_categories.png" alt="Controll/Categories">COM_CONTROLL_TITLE_CATEGORIES</menu>
-
-			<menu link="option=com_controll&amp;view=settings" view="settings" img="components/com_controll/assets/images/s_settings.png" alt="Controll/Settings">COM_CONTROLL_TITLE_SETTINGS</menu>
+			    <menu link="option=com_controll&amp;view=controlls" view="controlls"
+                img="components/com_controll/assets/images/s_controlls.png"
+                alt="Controll/Controlls">COM_CONTROLL_TITLE_CONTROLLS</menu>
+          <menu link="option=com_controll&amp;view=categories" view="categories"
+                img="components/com_controll/assets/images/s_categories.png"
+                alt="Controll/Categories">COM_CONTROLL_TITLE_CATEGORIES</menu>
+          <menu link="option=com_controll&amp;view=subjects" view="subjects"
+                img="" alt="Controll/Subjects">COM_CONTROLL_TITLE_SUBJECTS</menu>
+          <menu link="option=com_controll&amp;view=settings" view="settings"
+                img="components/com_controll/assets/images/s_settings.png"
+                alt="Controll/Settings">COM_CONTROLL_TITLE_SETTINGS</menu>
 
         </submenu>
         <files folder="administrator">
@@ -65,8 +71,8 @@
         </files>
         <languages folder="languages/administrator">
 
-			<language tag="ru-RU">ru-RU/ru-RU.com_controll.ini</language>
-			<language tag="ru-RU">ru-RU/ru-RU.com_controll.sys.ini</language>
+          <language tag="ru-RU">ru-RU/ru-RU.com_controll.ini</language>
+          <language tag="ru-RU">ru-RU/ru-RU.com_controll.sys.ini</language>
         </languages>
     </administration>
     <plugins>
