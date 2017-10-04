@@ -30,9 +30,14 @@ class ControllHelper {
 			$vName == 'categories'
 		);
     JHtmlSidebar::addEntry(
-    JText::_('COM_CONTROLL_TITLE_SUBJECTS'),
+    JText::_('Предметы'),
     'index.php?option=com_controll&view=subjects',
     $vName == 'subjects'
+    );
+    JHtmlSidebar::addEntry(
+    JText::_('Преподаватели'),
+    'index.php?option=com_controll&view=teachers',
+    $vName == 'teachers'
     );
 		JHtmlSidebar::addEntry(
 			JText::_('COM_CONTROLL_TITLE_SETTINGS'),
