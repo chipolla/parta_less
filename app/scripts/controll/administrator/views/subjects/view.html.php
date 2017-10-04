@@ -52,7 +52,7 @@ class ControllViewSubjects extends JViewLegacy {
         $state = $this->get('State');
         $canDo = ControllHelper::getActions($state->get('filter.category_id'));
 
-        JToolBarHelper::title(JText::_('COM_CONTROLL_TITLE_SUBJECTS'), '');
+        JToolBarHelper::title(JText::_('Предметы'), '');
 
         //Check if the form exists before showing the add/edit buttons
         $formPath = JPATH_COMPONENT_ADMINISTRATOR . '/views/controll';

@@ -262,7 +262,7 @@ class ControllTablesubject extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_controll.subject.' . (int) $this->$k;
+		return 'com_controll.subjects.' . (int) $this->$k;
 	}
 
 	/**

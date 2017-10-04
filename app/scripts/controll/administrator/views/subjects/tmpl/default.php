@@ -119,7 +119,7 @@ if (!empty($this->extra_sidebar)) {
 
 
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_CONTROLL_SUBJECT_NAME', 'a.subject', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'Предметы', 'a.subject', $listDirn, $listOrder); ?>
 				</th>
 
 
