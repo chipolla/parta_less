@@ -1,4 +1,5 @@
 
+
 CREATE TABLE IF NOT EXISTS `#__controll_controll` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `category` int(11) NOT NULL,
@@ -46,6 +47,16 @@ CREATE TABLE IF NOT EXISTS `#__controll_teachers`(
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
  );
+CREATE TABLE IF NOT EXISTS `#__controll_students`(
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `student` varchar(255) NOT NULL,
+ `ordering` int(11) NOT NULL,
+ `state` tinyint(4) NOT NULL,
+ `checked_out` int(11) NOT NULL,
+ `checked_out_time` datetime NOT NULL,
+ `created_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);
 
 CREATE TABLE IF NOT EXISTS `#__controll_settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,6 +90,11 @@ CREATE TABLE IF NOT EXISTS `#__controll_groups`(
   `teacher` int(11) NOT NULL,
   `subject` int(11) NOT NULL,
   `group_name` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL,
+  `state` tinyint(4) NOT NULL,
+  `checked_out` int(11) NOT NULL,
+  `checked_out_time` datetime NOT NULL,
+  `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -86,19 +102,25 @@ CREATE TABLE IF NOT EXISTS `#__controll_lessons`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `group_name` int(11) NOT NULL,
+  `ordering` int(11) NOT NULL,
+   `state` tinyint(4) NOT NULL,
+   `checked_out` int(11) NOT NULL,
+
+   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `#__controll_students`(
- `id` int(11) NOT NULL AUTO_INCREMENT,
- `student` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-);
+
 
 CREATE TABLE IF NOT EXISTS `#__controll_student_group`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student` int(11) NOT NULL,
   `group_name` int(11) NOT NULL,
+  `ordering` int(11) NOT NULL,
+   `state` tinyint(4) NOT NULL,
+   `checked_out` int(11) NOT NULL,
+   `checked_out_time` datetime NOT NULL,
+   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -107,6 +129,11 @@ CREATE TABLE IF NOT EXISTS `#__controll_visits`(
   `student_group` int(11) NOT NULL,
   `lesson` int(11) NOT NULL,
   `checkmark` tinyint(4) NOT NULL DEFAULT '0',
+  `ordering` int(11) NOT NULL,
+   `state` tinyint(4) NOT NULL,
+   `checked_out` int(11) NOT NULL,
+   `checked_out_time` datetime NOT NULL,
+   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -117,6 +144,11 @@ CREATE TABLE IF NOT EXISTS `#__controll_tests`(
   `percentage` tinyint(4) NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `comment` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL,
+   `state` tinyint(4) NOT NULL,
+   `checked_out` int(11) NOT NULL,
+
+   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 --

@@ -5,9 +5,9 @@
             readonly="true" class="readonly"
             description="JGLOBAL_FIELD_ID_DESC" />
 
-       <field name="teacher" type="text" size="40" class="inputbox"
-            label="Преподаватель"
-            description="Преподаватель"
+       <field name="student" type="text" size="40" class="inputbox"
+            label="Имя студента"
+            description="Имя студента"
  			      required="true"
             filter="safehtml" />
 

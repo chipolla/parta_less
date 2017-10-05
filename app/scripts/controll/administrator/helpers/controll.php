@@ -39,6 +39,11 @@ class ControllHelper {
     'index.php?option=com_controll&view=teachers',
     $vName == 'teachers'
     );
+    JHtmlSidebar::addEntry(
+    JText::_('Студенты'),
+    'index.php?option=com_controll&view=students',
+    $vName == 'students'
+    );
 		JHtmlSidebar::addEntry(
 			JText::_('COM_CONTROLL_TITLE_SETTINGS'),
 			'index.php?option=com_controll&view=settings',
