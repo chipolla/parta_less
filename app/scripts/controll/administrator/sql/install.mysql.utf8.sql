@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_groups`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher` int(11) NOT NULL,
   `subject` int(11) NOT NULL,
-  `group_name` varchar(255) NOT NULL,
+  `group` varchar(255) NOT NULL,
   `ordering` int(11) NOT NULL,
   `state` tinyint(4) NOT NULL,
   `checked_out` int(11) NOT NULL,

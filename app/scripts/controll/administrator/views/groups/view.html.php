@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 /**
  * View class for a list of Controll.
  */
-class ControllViewControlls extends JViewLegacy {
+class ControllViewGroups extends JViewLegacy {
 
     protected $items;
     protected $pagination;

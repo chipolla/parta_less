@@ -123,8 +123,8 @@ class ControllModelGroups extends JModelList {
             }
 
     // Join over the users for the checked out user
-    $query->select("tc.subject AS subject");
-    $query->join("LEFT", "#__controll_subjects AS tc ON tc.id=a.subject");
+    $query->select("sb.subject AS subject");
+    $query->join("LEFT", "#__controll_subjects AS sb ON sb.id=a.subject");
 
     //Filter Subjects
     $category = $this->getState('filter.teacher');
