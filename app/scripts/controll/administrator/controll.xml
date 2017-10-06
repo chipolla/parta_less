@@ -51,6 +51,9 @@
           <menu link="option=com_controll&amp;view=subjects" view="subjects"
                 img=""
                 alt="Controll/Subjects">COM_CONTROLL_TITLE_SUBJECTS</menu>
+          <menu link="option=com_controll&amp;view=groups" view="groups"
+                img=""
+                alt="Controll/Groups">Группы</menu>
           <menu link="option=com_controll&amp;view=teachers" view="teachers"
                 img=""
                 alt="Controll/Teachers">Преподаватели</menu>

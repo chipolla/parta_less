@@ -35,6 +35,11 @@ class ControllHelper {
     $vName == 'subjects'
     );
     JHtmlSidebar::addEntry(
+    JText::_('Группы'),
+    'index.php?option=com_controll&view=groups',
+    $vName == 'groups'
+    );
+    JHtmlSidebar::addEntry(
     JText::_('Преподаватели'),
     'index.php?option=com_controll&view=teachers',
     $vName == 'teachers'

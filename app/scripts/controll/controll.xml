@@ -50,6 +50,8 @@
                 alt="Controll/Categories">COM_CONTROLL_TITLE_CATEGORIES</menu>
           <menu link="option=com_controll&amp;view=subjects" view="subjects"
                 img="" alt="Controll/Subjects">Предметы</menu>
+          <menu link="option=com_controll&amp;view=groups" view="groups"
+                img="" alt="Controll/Groups">Группы</menu>
           <menu link="option=com_controll&amp;view=teachers" view="teachers"
                 img="" alt="Controll/Teachers">Преподаватели</menu>
           <menu link="option=com_controll&amp;view=students" view="students"
