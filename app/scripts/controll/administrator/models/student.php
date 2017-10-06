@@ -15,7 +15,7 @@ jimport('joomla.application.component.modeladmin');
 /**
  * Controll model.
  */
-class ControllModelSubject extends JModelAdmin
+class ControllModelStudent extends JModelAdmin
 {
 	/**
 	 * @var		string	The prefix to use with controller messages.

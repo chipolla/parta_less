@@ -64,7 +64,7 @@ class JFormFieldControllЕeacher extends JFormFieldList
 		// Merge any additional options in the XML definition.
 		//$options = array_merge(parent::getOptions(), $options);
 
-		array_unshift($options, JHtml::_('select.option', '0', JText::_('преподаватель')));
+		array_unshift($options, JHtml::_('select.option', '0', JText::_('студент')));
 
 		return $options;
 	}

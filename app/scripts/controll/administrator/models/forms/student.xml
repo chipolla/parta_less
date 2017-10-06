@@ -6,8 +6,8 @@
             description="JGLOBAL_FIELD_ID_DESC" />
 
        <field name="student" type="text" size="40" class="inputbox"
-            label="Имя студента"
-            description="Имя студента"
+            label="Студент"
+            description="Студент"
  			      required="true"
             filter="safehtml" />
 
