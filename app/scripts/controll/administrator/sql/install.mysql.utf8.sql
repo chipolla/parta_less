@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_groups`(
 CREATE TABLE IF NOT EXISTS `#__controll_lessons`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `group_name` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `ordering` int(11) NOT NULL,
    `state` tinyint(4) NOT NULL,
    `checked_out` int(11) NOT NULL,
@@ -112,10 +112,10 @@ CREATE TABLE IF NOT EXISTS `#__controll_lessons`(
 
 
 
-CREATE TABLE IF NOT EXISTS `#__controll_student_group`(
+CREATE TABLE IF NOT EXISTS `#__controll_student_groups`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student` int(11) NOT NULL,
-  `group_name` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `ordering` int(11) NOT NULL,
    `state` tinyint(4) NOT NULL,
    `checked_out` int(11) NOT NULL,

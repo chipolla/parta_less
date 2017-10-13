@@ -30,7 +30,7 @@ class JFormFieldControllTeacher extends JFormFieldList
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'ControllЕeacher';
+	protected $type = 'ControllTeacher';
 
 	/**
 	 * Method to get the field options.

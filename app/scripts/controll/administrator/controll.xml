@@ -60,6 +60,9 @@
           <menu link="option=com_controll&amp;view=students" view="students"
                 img=""
                 alt="Controll/Students">Студенты</menu>
+          <menu link="option=com_controll&amp;view=studentgroupss" view="studentgroups"
+                img=""
+                alt="Controll/StudentGroups">Группы студентов</menu>
           <menu link="option=com_controll&amp;view=settings" view="settings"
                 img="components/com_controll/assets/images/s_settings.png"
                 alt="Controll/Settings">COM_CONTROLL_TITLE_SETTINGS</menu>

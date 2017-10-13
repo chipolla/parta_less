@@ -22,7 +22,7 @@ $extension='com_controll';
  * @subpackage	com_banners
  * @since		1.6
  */
-class JFormFieldControllStudent extends JFormFieldList
+class JFormFieldControllGroup extends JFormFieldList
 {
 	/**
 	 * The form field type.
@@ -30,7 +30,7 @@ class JFormFieldControllStudent extends JFormFieldList
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'ControllStudent';
+	protected $type = 'ControllGroup';
 
 	/**
 	 * Method to get the field options.
@@ -46,10 +46,10 @@ class JFormFieldControllStudent extends JFormFieldList
 		$db		= JFactory::getDbo();
 		$query	= $db->getQuery(true);
 
-		$query->select('id As value, student As text');
-		$query->from('#__controll_students AS a');
+		$query->select('id As value, studentgroup As text');
+		$query->from('#__controll_groups AS a');
 		$query->where('a.state=1');
-		$query->order('a.student');
+		$query->order('a.group');
 
 		// Get the options.
 		$db->setQuery($query);
@@ -64,7 +64,7 @@ class JFormFieldControllStudent extends JFormFieldList
 		// Merge any additional options in the XML definition.
 		//$options = array_merge(parent::getOptions(), $options);
 
-		array_unshift($options, JHtml::_('select.option', '0', JText::_('студент')));
+		array_unshift($options, JHtml::_('select.option', '0', JText::_('группа')));
 
 		return $options;
 	}
