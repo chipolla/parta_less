@@ -30,6 +30,9 @@ http://docs.joomla.org/Category_parameter_type
 http://docs.joomla.org/Subject_parameter_type
 <field name="mysubject" type="subject" label="Select a subject" description="" section="3" />
 
+http://docs.joomla.org/Teacher_parameter_type
+<field name="myteacher" type="teacher" label="Select a teacher" description="" section="3" />
+
 http://docs.joomla.org/Editors_parameter_type
 <field name="myeditor" type="editors" default="none" label="Select an editor" />
 

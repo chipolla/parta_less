@@ -24,6 +24,7 @@ class ControllViewGroups extends JViewLegacy {
      * Display the view
      */
     public function display($tpl = null) {
+
         $this->state = $this->get('State');
         $this->items = $this->get('Items');
         $this->pagination = $this->get('Pagination');
@@ -38,7 +39,9 @@ class ControllViewGroups extends JViewLegacy {
         $this->addToolbar();
 
         $this->sidebar = JHtmlSidebar::render();
+  echo $tpl;
         parent::display($tpl);
+  echo 999999;
     }
 
     /**
@@ -50,7 +53,7 @@ class ControllViewGroups extends JViewLegacy {
         require_once JPATH_COMPONENT . '/helpers/controll.php';
 
         $state = $this->get('State');
-        $canDo = ControllHelper::getActions($state->get('filter.category'));
+        $canDo = ControllHelper::getActions($state->get('filter.category_id'));
 
         JToolBarHelper::title(JText::_('COM_CONTROLL_TITLE_CONTROLLS'), 'controlls.png');
 
@@ -121,11 +124,11 @@ class ControllViewGroups extends JViewLegacy {
 
 	protected function getSortFields()
 	{
-		return array(
-		'a.id' => JText::_('JGRID_HEADING_ID'),
-		'a.group' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
-		'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
-		'a.state' => JText::_('JSTATUS'),
+    return array(
+      'a.id' => JText::_('JGRID_HEADING_ID'),
+      'a.group' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
+      'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
+      'a.state' => JText::_('JSTATUS'),
 		);
 	}
 

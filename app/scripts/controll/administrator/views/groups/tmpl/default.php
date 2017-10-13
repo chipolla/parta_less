@@ -8,6 +8,7 @@
  */
 
 // no direct access
+
 defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
@@ -27,13 +28,13 @@ $canOrder	= $user->authorise('core.edit.state', 'com_controll');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_controll&task=controlls.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_controll&task=groups.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'controllList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 $sortFields = $this->getSortFields();
 
 $setting = ControllHelper::config();
-$image_storiage_path = $setting->imagepath.'/';
+
 ?>
 <script type="text/javascript">
 	Joomla.orderTable = function() {
@@ -61,20 +62,20 @@ $image_storiage_path = $setting->imagepath.'/';
 if (!empty($this->extra_sidebar)) {
     $this->sidebar .= $this->extra_sidebar;
 }
-
+  echo 111111;
 //Get teacher options
 JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
 $teacher = JFormHelper::loadFieldType('ControllTeacher', false);
 $TeacherOptions=$teacher->getOptions(); // works only if you set your field getOptions on public!!
-
-//Get group options
+  echo 2222222;
+//Get subject options
 JFormHelper::addFieldPath(JPATH_COMPONENT . '/models/fields');
-$group = JFormHelper::loadFieldType('ControllGroup', false);
-$GroupOptions=$group->getOptions(); // works only if you set your field getOptions on public!!
-
+$subject = JFormHelper::loadFieldType('ControllSubject', false);
+$GroupOptions=$subject->getOptions(); // works only if you set your field getOptions on public!!
+  echo 333333;
   ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_controll&view=controlls'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_controll&view=groups'); ?>" method="post" name="adminForm" id="adminForm">
 <?php if(!empty($this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -142,13 +143,13 @@ $GroupOptions=$group->getOptions(); // works only if you set your field getOptio
 					</th>
                 <?php endif; ?>
 
-
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'группы', 'a.group', $listDirn, $listOrder); ?>
-				</th>
+          <th class='left'>
+            <?php echo JHtml::_('grid.sort',  'группы', 'a.group', $listDirn, $listOrder); ?>
+          </th>
         <th class='left'>
 				<?php echo JHtml::_('grid.sort',  'преподаватели', 'a.teacher', $listDirn, $listOrder); ?>
 				</th>
+
         <th class='left'>
           <?php echo JHtml::_('grid.sort',  'предметы', 'a.subject', $listDirn, $listOrder); ?>
         </th>
@@ -213,17 +214,17 @@ $GroupOptions=$group->getOptions(); // works only if you set your field getOptio
 					</td>
                 <?php if (isset($this->items[0]->state)): ?>
 					<td class="center">
-						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'controlls.', $canChange, 'cb'); ?>
+						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'groups.', $canChange, 'cb'); ?>
 					</td>
                 <?php endif; ?>
 
 
 				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out) : ?>
-					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'controlls.', $canCheckin); ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'groups.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_controll&task=controll.edit&id='.(int) $item->id); ?>">
+					<a href="<?php echo JRoute::_('index.php?option=com_controll&task=group.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->group); ?></a>
 				<?php else : ?>
 					<?php echo $this->escape($item->group); ?>

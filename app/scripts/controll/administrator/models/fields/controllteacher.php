@@ -22,7 +22,7 @@ $extension='com_controll';
  * @subpackage	com_banners
  * @since		1.6
  */
-class JFormFieldControllЕeacher extends JFormFieldList
+class JFormFieldControllTeacher extends JFormFieldList
 {
 	/**
 	 * The form field type.

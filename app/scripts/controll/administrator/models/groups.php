@@ -24,6 +24,9 @@ class ControllModelGroups extends JModelList {
      * @since    1.6
      */
     public function __construct($config = array()) {
+
+
+
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
                 'id', 'a.id',
@@ -54,9 +57,12 @@ class ControllModelGroups extends JModelList {
         $published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
         $this->setState('filter.state', $published);
 
-        //Filter (dropdown) category
-		$category= $app->getUserStateFromRequest($this->context.'.filter.category', 'filter_category', '', 'string');
-		$this->setState('filter.category', $category);
+        //Filter (dropdown) teacher
+        $teacher= $app->getUserStateFromRequest($this->context.'.filter.teacher', 'filter_teacher', '', 'string');
+        $this->setState('filter.teacher', $teacher);
+
+        $subject= $app->getUserStateFromRequest($this->context.'.filter.subject', 'filter_subject', '', 'string');
+        $this->setState('filter.subject', $subject);
 
         // Load the parameters.
         $params = JComponentHelper::getParams('com_controll');
@@ -92,85 +98,78 @@ class ControllModelGroups extends JModelList {
      * @since	1.6
      */
     protected function getListQuery() {
-        // Create a new query object.
+    // Create a new query object.
         $db = $this->getDbo();
         $query = $db->getQuery(true);
 
-        // Select the required fields from the table.
-        $query->select(
-                $this->getState(
-                        'list.select', 'DISTINCT a.*'
-                )
-        );
-        $query->from('`#__controll_groups` AS a');
-
-
+    // Select the required fields from the table.
+      $query->select(
+        $this->getState(
+          'list.select', 'DISTINCT a.*'
+        )
+      );
+      $query->from('`#__controll_groups` AS a');
 		// Join over the users for the checked out user
-		$query->select("uc.name AS editor");
-		$query->join("LEFT", "#__users AS uc ON uc.id=a.checked_out");
+      $query->select("uc.name AS editor");
+      $query->join("LEFT", "#__users AS uc ON uc.id=a.checked_out");
+
 		// Join over the user field 'created_by'
-		$query->select('created_by.name AS created_by');
-		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
+      $query->select('created_by.name AS created_by');
+      $query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
 
 		// Join over the users for the checked out user
-		$query->select("tc.teacher AS teacher");
-		$query->join("LEFT", "#__controll_teachers AS tc ON tc.id=a.teacher");
+      $query->select("tc.teacher AS teacher");
+      $query->join("LEFT", "#__controll_teachers AS tc ON tc.id=a.teacher");
 
     //Filter Teachers
-    $category = $this->getState('filter.teacher');
-        if (!empty($category)) {
-                $query->where('a.teacher = ' . $category);
-            }
+      $teacher = $this->getState('filter.teacher');
+      if (!empty($teacher)) {
+          $query->where('a.teacher = ' . $teacher);
+      }
 
     // Join over the users for the checked out user
-    $query->select("sb.subject AS subject");
-    $query->join("LEFT", "#__controll_subjects AS sb ON sb.id=a.subject");
+      $query->select("sb.subject AS subject");
+      $query->join("LEFT", "#__controll_subjects AS sb ON sb.id=a.subject");
 
     //Filter Subjects
-    $category = $this->getState('filter.teacher');
-    if (!empty($category)) {
-    $query->where('a.teacher = ' . $category);
-    }
+      $subject = $this->getState('filter.subject');
+      if (!empty($subject)) {
+        $query->where('a.subject = ' . $subject);
+      }
 
 		// Filter by published state
-		$published = $this->getState('filter.state');
-		if (is_numeric($published)) {
-			$query->where('a.state = ' . (int) $published);
-		} else if ($published === '') {
-			$query->where('(a.state IN (0, 1))');
-		}
+      $published = $this->getState('filter.state');
+      if (is_numeric($published)) {
+        $query->where('a.state = ' . (int) $published);
+      } else if ($published === '') {
+        $query->where('(a.state IN (0, 1))');
+      }
 
-        // Filter by search in title
-        $search = $this->getState('filter.search');
-        if (!empty($search)) {
-            if (stripos($search, 'id:') === 0) {
-                $query->where('a.id = ' . (int) substr($search, 3));
-            } else {
-                $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('( a.name LIKE '.$search.'  OR  a.designation LIKE '.$search.'  OR  a.company LIKE '.$search.'  OR  a.location LIKE '.$search.'  OR  a.controll LIKE '.$search.' )');
-            }
-
-
-
+    // Filter by search in title
+      $search = $this->getState('filter.search');
+      if (!empty($search)) {
+        if (stripos($search, 'id:') === 0) {
+          $query->where('a.id = ' . (int) substr($search, 3));
+        } else {
+          $search = $db->Quote('%' . $db->escape($search, true) . '%');
+          $query->where('( a.group LIKE '.$search.')');
         }
+      }
 
+    // Add the list ordering clause.
+      $orderCol = $this->state->get('list.ordering');
+      $orderDirn = $this->state->get('list.direction');
+      if ($orderCol && $orderDirn) {
+        $query->order($db->escape($orderCol . ' ' . $orderDirn));
+      }
 
-
-
-        // Add the list ordering clause.
-        $orderCol = $this->state->get('list.ordering');
-        $orderDirn = $this->state->get('list.direction');
-        if ($orderCol && $orderDirn) {
-            $query->order($db->escape($orderCol . ' ' . $orderDirn));
-        }
-		//echo $query;
-        return $query;
+      return $query;
     }
 
     public function getItems() {
-        $items = parent::getItems();
+      $items = parent::getItems();
 
-        return $items;
+      return $items;
     }
 
 }
